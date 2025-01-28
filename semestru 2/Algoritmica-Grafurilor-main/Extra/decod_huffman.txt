@@ -1,0 +1,103 @@
+#include <iostream>
+#include <fstream>
+#include <map>
+#include <string>
+using namespace std;
+ifstream fin("input.txt");
+struct Nod
+{
+    int frecventa = 0;
+    char cod = 0;
+    bool operator<(const Nod& _nod) const
+    {
+        return frecventa < _nod.frecventa || (frecventa == _nod.frecventa && cod < _nod.cod);
+    }
+};
+
+multimap<Nod, string> MD;
+
+int main()
+{
+    int letters, freq[256]{};
+    string line;
+    getline(fin, line);
+    letters = stoi(line);
+
+    // citim frecventa fiecarui caracter si inseram in MD
+    for (int i = 0; i < letters; ++i)
+    {
+        getline(fin, line);
+        char chr = line[0];
+        freq[int(chr)] = stoi(line.substr(2));
+        MD.insert({ {freq[int(chr)], chr}, string(1, chr) });
+    }
+
+    string encoded;
+    getline(fin, encoded);
+    string text;
+    map<string, char> codes;
+
+    string code[256]{};
+    // construim arborele Huffman
+    while (--letters)
+    {
+        auto x = *MD.begin();
+        for (auto chr : x.second)
+            code[int(chr)] = "0" + code[int(chr)]; // extragem minim  n x
+        MD.erase(MD.begin());
+
+        auto y = *MD.begin();
+        for (auto chr : y.second)
+            code[int(chr)] = "1" + code[int(chr)]; // extragem minim  n y
+        MD.erase(MD.begin());
+
+        // combinam cele doua si inseram in multimap
+        MD.insert({ { x.first.frecventa + y.first.frecventa, min(x.first.cod, y.first.cod) }, x.second + y.second });
+    }
+
+    // construim mapul pentru coduri
+    for (int i = 0; i < 256; ++i)
+        if (code[i] != "\0")
+            codes.insert({ code[i], i });
+
+    int last = 0, len = 0;
+    string prev, chr;
+
+    // decodificarea textului
+    while (codes.size() > 1)
+    {
+        string until = encoded.substr(last, len);
+        len++;
+        auto srch = codes.find(until);
+        if (srch != codes.end())
+        {
+            // actualizam caracterul si codul precedent
+            prev = until;
+            chr = srch->second;
+        }
+        else if (srch == codes.end() && prev != "\0")
+        {
+            // daca nu gasim codul si exista un cod precedent valid 
+            // adaugam caracterul  n textul decodificat
+            text.append(chr);
+            freq[int(chr[0])]--;
+
+            // daca frecventa unui caracter devine 0, eliminam codul din map
+            if (freq[int(chr[0])] == 0)
+                codes.erase(prev);
+
+            // resetam indicii pentru a continua decodificarea
+            last += prev.size();
+            len = 0;
+            prev = "\0";
+            chr = "\0";
+        }
+    }
+
+    // daca ramane un singur cod, adaugam caracterul corespunzator in textul decodificat
+    if (codes.size() == 1)
+        text.append(string(1, codes.begin()->second));
+
+    cout << text;
+    return 0;
+}

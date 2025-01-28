@@ -1,0 +1,4 @@
+sa se creeze un program care creaza 3 procese fiu
+ cand procesele fiu primesc sigusr2 sa isi afiseze pid-ul
+ cand parintele primeste sigusr1 sa trimita sigusr2 copiilor
+cand parintele primeste sigusr2 trimite sigkill copiilor

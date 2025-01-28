@@ -1,0 +1,111 @@
+//POMPARE PREFLUX
+//
+#include<iostream>
+#include<fstream>
+#include<map>
+#include<vector>
+#include <queue>
+int flux[10000][10000];
+int capacitate[10000][10000];
+std::map<int, int> inaltime;
+std::map<int, int> exces;
+int nr_varfuri;
+int sursa;
+int terminal;
+
+void citire();
+void initializare_preflux();
+int pompare_preflux();
+void pompare(int u, int v);
+void inaltare(int u);
+
+int main(){
+    citire();
+    auto rezultat = pompare_preflux();
+    std::cout<<rezultat<<'\n';
+}
+
+void citire(){
+    std::ifstream fin("2/5-in.txt");
+    int ceva, x, y, z;
+    fin>>nr_varfuri>>ceva;
+    while(fin>>x>>y>>z){
+        capacitate[x][y] = z;
+    }
+    sursa = 0;
+    terminal = nr_varfuri - 1;
+}
+
+void initializare_preflux() {
+    for(auto i = 0; i < nr_varfuri; ++i){
+        inaltime[i] = 0;
+        exces[i] = 0;
+    }
+    inaltime[sursa] = nr_varfuri;
+    for(auto i = 0; i < nr_varfuri; ++i){
+        if(capacitate[sursa][i] > 0){
+            flux[sursa][i] = capacitate[sursa][i];
+            exces[i] += capacitate[sursa][i];
+            exces[sursa] -= capacitate[sursa][i];
+            flux[i][sursa] = -capacitate[sursa][i];
+        }
+    }
+}
+
+int pompare_preflux() {
+    initializare_preflux();
+    while (true) {
+        for (int i = 1; i < nr_varfuri - 1; ++i) {
+            if (exces[i] > 0) {
+                for (int j = 0; j < nr_varfuri; ++j) {
+                    if (i != j) {
+                        if (capacitate[i][j] - flux[i][j] > 0 and inaltime[i] == inaltime[j] + 1) {
+                            pompare(i, j);
+                            goto continua;
+                        }
+                    }
+                }
+            }
+        }
+
+        for (int i = 1; i < nr_varfuri - 1; ++i) {
+            if (exces[i] > 0) {
+                for (int j = 0; j < nr_varfuri; ++j) {
+                    if (i != j) {
+                        if (capacitate[i][j] - flux[i][j] > 0 and inaltime[j] >= inaltime[i]) {
+                            if (j == 0) {
+//                                std::cout << "Aici";
+                            }
+                            inaltare(i);
+                            goto continua;
+                        }
+                    }
+                }
+            }
+        }
+        break;
+        continua:
+        int a;
+    }
+    std::cout << exces[sursa] << ' ' << exces[terminal] << '\n';
+    return exces[terminal];
+}
+
+void pompare(int u, int v) {
+    auto maxim = std::min(exces[u], capacitate[u][v] - flux[u][v]);
+    flux[u][v] += maxim;
+    flux[v][u] -= maxim;
+    exces[u] -= maxim;
+    exces[v] += maxim;
+}
+
+void inaltare(int u) {
+    int minim = 999999;
+    for(int i = 0; i < nr_varfuri; ++i){
+        if(capacitate[u][i] - flux[u][i] > 0 and i != u){
+            if(inaltime[i] < minim)
+                minim = inaltime[i];
+        }
+    }
+    inaltime[u] = minim + 1;
+}

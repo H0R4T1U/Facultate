@@ -1,0 +1,37 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    int nr_nod;
+    int arr[105]; 
+    ifstream fisier("input.txt"); 
+    fisier >> nr_nod;
+    for (int i = 0; i < nr_nod; i++)
+        fisier >> arr[i];
+
+    int count = nr_nod - 1;
+
+    // cat timp graful contine alte noduri in afara de radacina
+    while (count--)
+    {
+        int i, w;
+        // cautam primul nod care nu este in cod
+        for (i = 0; i < nr_nod; i++)
+        {
+            w = 0;
+            // verificam daca nodul i este prezent in cod
+            for (int j = 0; j < nr_nod; j++)
+                if (arr[j] == i)
+                    w = 1; // nodul i este prezent
+
+            if (w == 0) // nodul i nu este prezent
+                break;
+        }
+        // afisam valoarea nodului din cod si actualizam vectorul
+        cout << arr[i] << " ";
+        arr[i] = i; // actualizarea array-ului
+    }
+    return 0;
+}

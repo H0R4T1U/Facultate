@@ -1,0 +1,38 @@
+[4mipc[24m(2)                                                   System Calls Manual                                                   [4mipc[24m(2)
+
+[1mNAME[0m
+       ipc - System V IPC system calls
+
+[1mLIBRARY[0m
+       Standard C library ([4mlibc[24m, [4m-lc[24m)
+
+[1mSYNOPSIS[0m
+       [1m#include <linux/ipc.h>        [22m/* Definition of needed constants */
+       [1m#include <sys/syscall.h>      [22m/* Definition of [1mSYS_* [22mconstants */
+       [1m#include <unistd.h>[0m
+
+       [1mint syscall(SYS_ipc, unsigned int [4m[22mcall[24m[1m, int [4m[22mfirst[24m[1m,[0m
+                   [1munsigned long [4m[22msecond[24m[1m, unsigned long [4m[22mthird[24m[1m, void *[4m[22mptr[24m[1m,[0m
+                   [1mlong [4m[22mfifth[24m[1m);[0m
+
+       [4mNote[24m: glibc provides no wrapper for [1mipc[22m(), necessitating the use of [1msyscall[22m(2).
+
+[1mDESCRIPTION[0m
+       [1mipc[22m()  is a common kernel entry point for the System V IPC calls for messages, semaphores, and shared memory.  [4mcall[24m determines
+       which IPC function to invoke; the other arguments are passed through to the appropriate call.
+
+       User-space programs should call the appropriate functions by their usual names.  Only standard library implementors and kernel
+       hackers need to know about [1mipc[22m().
+
+[1mVERSIONS[0m
+       On some architectures—for example x86-64 and ARM—there is no [1mipc[22m() system call; instead, [1mmsgctl[22m(2), [1msemctl[22m(2), [1mshmctl[22m(2),  and
+       so on really are implemented as separate system calls.
+
+[1mSTANDARDS[0m
+       Linux.
+
+[1mSEE ALSO[0m
+       [1mmsgctl[22m(2),  [1mmsgget[22m(2),  [1mmsgrcv[22m(2),  [1mmsgsnd[22m(2),  [1msemctl[22m(2),  [1msemget[22m(2), [1msemop[22m(2), [1msemtimedop[22m(2), [1mshmat[22m(2), [1mshmctl[22m(2), [1mshmdt[22m(2),
+       [1mshmget[22m(2), [1msysvipc[22m(7)
+
+Linux man-pages 6.05.01                                       2023-03-30                                                       [4mipc[24m(2)

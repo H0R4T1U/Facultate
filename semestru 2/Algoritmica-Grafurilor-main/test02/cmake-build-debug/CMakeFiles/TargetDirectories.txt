@@ -1,0 +1,3 @@
+/home/horatiu/code/Algoritmica-Grafurilor/test02/cmake-build-debug/CMakeFiles/test02.dir
+/home/horatiu/code/Algoritmica-Grafurilor/test02/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/horatiu/code/Algoritmica-Grafurilor/test02/cmake-build-debug/CMakeFiles/rebuild_cache.dir

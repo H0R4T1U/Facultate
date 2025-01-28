@@ -1,0 +1,6 @@
+subiect nota 5
+ => cerinta conversie dintr-o forma de reprez in alta 
+	25 min
+subiect nota 10
+	=> cerinte similare sau identice sau care se pot adapta la problemele din laboratoarele 1,2,3 fara( labirint sau algoritmul jhonson).
+	50 min
