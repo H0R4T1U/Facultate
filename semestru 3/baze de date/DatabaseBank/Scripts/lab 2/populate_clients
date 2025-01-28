@@ -1,0 +1,7 @@
+USE Bank;
+
+INSERT INTO Clients (branch_id, first_name, last_name, email, date_of_birth, date_of_join, address)
+VALUES 
+  (2, 'Laura', 'Petrache', 'laura.p@gmail.com', '1990-06-15', '2021-05-20', 'Strada Fabricii de zahar nr 15  Cluj Napoca'),
+  (1, 'Adelina', 'Poenaru', 'Adelina.p@gmail.com', '1985-02-10', '2022-03-14', 'Strada Revolutiei nr 10, Bucuresti'),
+  (3, 'Rares', 'Popa', 'Rares.p@gmail.com', '1992-08-29', '2020-07-19', 'Strada Victoriei nr 76, Iasi');

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane prefHeight="1000.0" prefWidth="1000.0" stylesheets="@../css/mainWindow.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ubb.scs.map.Controllers.FriendRequestsController">
+    <!-- Horizontally Centered VBox -->
+    <VBox spacing="15" styleClass="login_param" AnchorPane.leftAnchor="200.0"
+          AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="50.0">
+        <Label styleClass="header" text="Requests">
+        <font>
+            <Font size="20.0"/>
+        </font>
+        </Label>
+        <ListView fx:id="listViewRequests" styleClass="styled-list"/>
+        <ButtonBar buttonMinWidth="220.0" styleClass="action-section">
+            <buttons>
+                <Button onAction="#handleButtonAcceptRequestClicked" styleClass="add-button" text="Accept">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                            <Image url="@../icons/circle-plus.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button onAction="#handleButtonDeleteRequestClicked" styleClass="remove-button" text="Delete">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                            <Image url="@../icons/circle-minus.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#backToMain" styleClass="default-button" text="Back">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                            <Image url="@../icons/arrow-left-long.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </buttons>
+        </ButtonBar>
+    </VBox>
+</AnchorPane>

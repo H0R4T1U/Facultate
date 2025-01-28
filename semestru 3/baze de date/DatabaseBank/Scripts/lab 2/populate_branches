@@ -1,0 +1,7 @@
+USE Bank;
+
+INSERT INTO Branches (name, adress, city, phone, email)
+VALUES 
+  ('Bucharest Central Bank', 'Strada Mihai Viteazu nr 14', 'Bucharest', '0730 457 523', 'central@bank.com'),
+  ('Cluj HQ', 'Strada Iuliu Maniu nr 12', 'Cluj', '0730 456 234', 'Cluj@bank.com'),
+  ('East', 'Strada Stefan cel Mare nr 25', 'Iasi', '0730  455 003', 'east@bank.com');

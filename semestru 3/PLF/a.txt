@@ -1,0 +1,224 @@
+% Predicatul principal pentru a calcula suma a două numere reprezentate ca liste
+suma(Lista1, Lista2, Suma) :-
+    inversare(Lista1, RevLista1),
+    inversare(Lista2, RevLista2),
+    suma_cu_transport(RevLista1, RevLista2, 0, RevSuma),
+    inversare(RevSuma, Suma).
+
+% Predicat pentru inversarea unei liste
+inversare(Lista, Inversata) :-
+    inversare(Lista, [], Inversata).
+inversare([], Inversata, Inversata).
+inversare([H|T], Acc, Inversata) :-
+    inversare(T, [H|Acc], Inversata).
+
+% Predicat pentru suma a două liste cifră cu cifră, incluzând transportul
+suma_cu_transport([], [], 0, []).
+suma_cu_transport([], [], Transport, [Transport]) :- Transport > 0.
+suma_cu_transport([H1|T1], [], Transport, [S|RestSuma]) :-
+    S is (H1 + Transport) mod 10,
+    NouTransport is (H1 + Transport) // 10,
+    suma_cu_transport(T1, [], NouTransport, RestSuma).
+suma_cu_transport([], [H2|T2], Transport, [S|RestSuma]) :-
+    S is (H2 + Transport) mod 10,
+    NouTransport is (H2 + Transport) // 10,
+    suma_cu_transport([], T2, NouTransport, RestSuma).
+suma_cu_transport([H1|T1], [H2|T2], Transport, [S|RestSuma]) :-
+    S is (H1 + H2 + Transport) mod 10,
+    NouTransport is (H1 + H2 + Transport) // 10,
+    suma_cu_transport(T1, T2, NouTransport, RestSuma).
+
+
+
+PROBLEMA 2
+% Predicatul principal care sortează o listă cu păstrarea dublurilor
+sortare(Lista, ListaSortata) :-
+    inserare_sort(Lista, [], ListaSortata).
+
+% Cazul de bază: dacă lista este goală, lista sortată finală este lista acumulantului.
+inserare_sort([], Acc, Acc).
+
+% Cazul recursiv: inserează primul element al listei în lista acumulantului sortată.
+inserare_sort([H|T], Acc, ListaSortata) :-
+    inserare(H, Acc, AccNou),
+    inserare_sort(T, AccNou, ListaSortata).
+
+% Predicat pentru inserarea unui element într-o listă sortată, păstrând ordinea
+inserare(X, [], [X]).
+inserare(X, [H|T], [X, H|T]) :- X =< H.
+inserare(X, [H|T], [H|Rest]) :- X > H, inserare(X, T, Rest).
+
+
+PROBLEMA 3
+% Predicatul principal care sortează o listă cu eliminarea dublurilor
+sortare_fara_dubluri(Lista, ListaSortataFaraDubluri) :-
+    inserare_sort_fara_dubluri(Lista, [], ListaSortataFaraDubluri).
+
+% Cazul de bază: dacă lista de intrare este goală, lista sortată finală este lista acumulantului.
+inserare_sort_fara_dubluri([], Acc, Acc).
+
+% Cazul recursiv: inserează primul element al listei în lista acumulantului sortată,
+% doar dacă elementul nu este deja prezent în lista sortată.
+inserare_sort_fara_dubluri([H|T], Acc, ListaSortataFaraDubluri) :-
+    inserare_fara_dubluri(H, Acc, AccNou),
+    inserare_sort_fara_dubluri(T, AccNou, ListaSortataFaraDubluri).
+
+% Predicat pentru inserarea unui element într-o listă sortată, păstrând ordinea și eliminând dublurile
+inserare_fara_dubluri(X, [], [X]).
+inserare_fara_dubluri(X, [H|T], [X, H|T]) :- X < H.
+inserare_fara_dubluri(X, [H|T], [H|Rest]) :-
+    X > H,
+    inserare_fara_dubluri(X, T, Rest).
+inserare_fara_dubluri(X, [X|T], [X|T]). % Dacă X este deja prezent, nu îl mai adăugăm.
+
+
+PROBLEMA 4
+% Predicatul principal pentru interclasarea a două liste sortate fără păstrarea dublurilor
+interclasare_fara_dubluri([], [], []).
+interclasare_fara_dubluri(Lista, [], Lista) :- !.
+interclasare_fara_dubluri([], Lista, Lista) :- !.
+interclasare_fara_dubluri([H1|T1], [H2|T2], [H1|Rest]) :-
+    H1 < H2,
+    interclasare_fara_dubluri(T1, [H2|T2], Rest).
+interclasare_fara_dubluri([H1|T1], [H2|T2], [H2|Rest]) :-
+    H1 > H2,
+    interclasare_fara_dubluri([H1|T1], T2, Rest).
+interclasare_fara_dubluri([H|T1], [H|T2], [H|Rest]) :-
+    interclasare_fara_dubluri(T1, T2, Rest)
+
+
+PROBLEMA 5
+% Predicatul principal care determină pozițiile elementului maxim
+poz(Lista, Pozitii) :-
+    max_lista(Lista, Max),         % Determină valoarea maximă
+    pozitii_max(Lista, Max, 1, Pozitii). % Găsește pozițiile acestei valori maxime
+
+% Predicat pentru găsirea valorii maxime într-o listă
+max_lista([X], X).
+max_lista([H|T], Max) :-
+    max_lista(T, MaxRest),
+    Max is max(H, MaxRest).
+
+% Predicat pentru determinarea pozițiilor la care se găsește valoarea Max
+% Parametrii: Lista, Valoarea Max, Indexul Curent, Lista de Pozitii
+pozitii_max([], _, _, []).  % Cazul de bază: lista este goală
+pozitii_max([H|T], Max, Index, [Index|RestPozitii]) :-
+    H =:= Max,               % Dacă elementul curent este maximul
+    !,
+    Index1 is Index + 1,
+    pozitii_max(T, Max, Index1, RestPozitii).
+pozitii_max([_|T], Max, Index, Pozitii) :-
+    Index1 is Index + 1,
+    pozitii_max(T, Max, Index1, Pozitii).
+
+
+PROBLEMA 6
+% Predicatul principal pentru înlocuirea tuturor aparițiilor elementului E cu lista L1
+inloc([], _, _, []).  % Cazul de bază: lista goală
+inloc([E|T], E, L1, Rezultat) :-  % Dacă primul element este egal cu E
+    inloc(T, E, L1, Rest),        % Înlocuiește în restul listei
+    append(L1, Rest, Rezultat).   % Adaugă L1 în rezultat
+inloc([H|T], E, L1, [H|Rest]) :-  % Dacă primul element nu este egal cu E
+    inloc(T, E, L1, Rest).        % Continuă cu restul listei fără modificare
+
+
+PROBLEMA 8
+% Predicatul principal care determină succesorul unui număr reprezentat prin listă
+succesor([], 1, [1]).  % Cazul în care lista este goală (succesorul lui 0)
+succesor([H|T], Carry, [NewH|NewT]) :-
+    NewH is (H + Carry) mod 10,      % Calculăm noul digit (mod 10 pentru a gestiona overflow-ul)
+    NewCarry is (H + Carry) // 10,   % Calculăm transportul (carry) pentru următoarea cifră
+    succesor(T, NewCarry, NewT).     % Continuăm recursiv cu restul listei
+
+% Predicatul care este folosit pentru a începe adunarea cu transportul
+succesor_numar(Lista, Rezultat) :-
+    succesor(Lista, 1, Rezultat).   % Începem adunarea cu 1 (succesorul)
+
+PROBLEMA 9
+% Predicatul principal care elimină secvențele de valori consecutive
+sterge([], []).  % Cazul de bază: lista goală este deja validă
+sterge([X], [X]).  % Dacă lista conține un singur element, nu există secvențe consecutive
+sterge([H, H1 | T], L) :-
+    H1 =:= H + 1,         % Verificăm dacă H și H1 sunt consecutive
+    sterge_consecutivi([H, H1 | T], L).  % Dacă sunt consecutive, eliminăm secvența
+sterge([H | T], [H | L]) :-
+    sterge(T, L).         % Dacă H nu este consecutiv cu următorul, îl păstrăm
+
+% Predicatul pentru eliminarea secvențelor consecutive
+sterge_consecutivi([H, H1 | T], L) :-
+    H1 =:= H + 1,         % Dacă H și H1 sunt consecutive, continuăm să le sărim
+    sterge_consecutivi([H1 | T], L).
+sterge_consecutivi([H], [H]).  % Dacă am ajuns la capătul secvenței, păstrăm elementul
+
+PROBLEMA 10
+% Predicatul pentru a adăuga valoarea E după pozițiile 1, 3, 7, 15...
+adauga_in_lista([], _, _, []).  % Cazul de bază: lista goală
+adauga_in_lista([H|T], E, N, [H, E | Rest]) :-
+    P is 2^N - 1,    % Determinăm poziția corespunzătoare (1, 3, 7, 15...)
+    P =:= length([H|T]), % Verificăm dacă poziția curentă se potrivește
+    N1 is N + 1,      % Continuăm cu următoarea secvență
+    adauga_in_lista(T, E, N1, Rest).
+adauga_in_lista([H|T], E, N, [H | Rest]) :-
+    adauga_in_lista(T, E, N, Rest).  % Continuăm recursiv cu restul listei
+
+PROBLEMA 11
+% Predicatul pentru a verifica dacă un număr este prim
+este_prim(2).  % 2 este prim
+este_prim(N) :-
+    N > 2,
+    \+ are_divizori(N, 2).  % Dacă nu are divizori între 2 și N-1, este prim
+
+% Predicatul auxiliar care verifică dacă N are divizori între 2 și Sqrt(N)
+are_divizori(N, D) :-
+    D * D =< N,          % D trebuie să fie mai mic sau egal cu √N
+    N mod D =:= 0.       % Verificăm dacă N este divizibil cu D
+are_divizori(N, D) :-
+    D * D < N,
+    D2 is D + 1,
+    are_divizori(N, D2).  % Continuăm căutarea cu D + 1
+
+% Predicatul care dublează fiecare număr prim din listă
+dubla_prime([], []).  % Cazul de bază: lista goală
+dubla_prime([H|T], [H, H | Rest]) :-
+    este_prim(H),       % Dacă H este prim, îl adăugăm de două ori
+    dubla_prime(T, Rest).
+dubla_prime([H|T], [H | Rest]) :-
+    \+ este_prim(H),    % Dacă H nu este prim, îl adăugăm o singură dată
+    dubla_prime(T, Rest).
+
+
+PROBLEMA 13
+% Predicatul pentru a calcula divizorii unui număr
+divizori(N, Divizori) :- divizori_aux(N, 1, [], Divizori).
+
+% Cazul de bază: când ajungem la un divizor mai mare decât N, terminăm.
+divizori_aux(N, D, Acc, Divizori) :-
+    D > N,
+    reverse(Acc, Divizori).  % Inversăm lista pentru a păstra ordinea corectă
+
+% Cazul recursiv: dacă D divide N, adăugăm D în lista de divizori.
+divizori_aux(N, D, Acc, Divizori) :-
+    D =< N,
+    (N mod D =:= 0 -> divizori_aux(N, D + 1, [D | Acc], Divizori); divizori_aux(N, D + 1, Acc, Divizori)).
+
+% Predicatul principal care adaugă divizorii după fiecare element din listă
+adauga_divizori([], []).  % Cazul de bază: lista goală
+adauga_divizori([H|T], [H | Rest]) :-
+    divizori(H, Divizori),  % Găsim divizorii lui H
+    append([H], Divizori, Temp),  % Adăugăm elementul și divizorii
+    adauga_divizori(T, Rest).
+
+
+PROBLEMA 14
+% Predicatul pentru a determina predecesorul unui numar reprezentat cifra cu cifra
+predecesor([], []).  % Cazul de bază: lista goală (nu ar trebui să apară în practică)
+predecesor([0|T], [9|Rest]) :-  % Dacă întâlnim un 0, îl facem 9 și continuăm recursiv
+    predecesor(T, Rest).
+predecesor([H|T], [H1|T1]) :-  % Dacă H > 0, scădem 1 din H și terminăm
+    H > 0,
+    H1 is H - 1,
+    T1 = T.
+predecesor([H|T], [H1|T1]) :-  % Dacă H este 0, îl facem 9 și continuăm recursiv
+    H = 0,
+    predecesor(T, [H1|T1]),
+    H1 = 9.

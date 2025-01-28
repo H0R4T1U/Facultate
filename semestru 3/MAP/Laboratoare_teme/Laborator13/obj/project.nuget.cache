@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "+n+9gwlsHCo=",
+  "success": true,
+  "projectFilePath": "/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/lab13-MAP.csproj",
+  "expectedPackageFiles": [
+    "/Users/horatiubanciu/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.2/microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "/Users/horatiubanciu/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.2/microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "/Users/horatiubanciu/.nuget/packages/npgsql/9.0.2/npgsql.9.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

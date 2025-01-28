@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.lab6.controller.MainPageController">
+   <children>
+      <VBox prefHeight="500.0" prefWidth="500.0">
+         <children>
+            <ImageView fitHeight="62.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" />
+            <TableView prefHeight="474.0" prefWidth="500.0">
+              <columns>
+                <TableColumn prefWidth="244.0" text="C1" />
+                <TableColumn minWidth="0.0" prefWidth="255.0" text="C2" />
+              </columns>
+            </TableView>
+            <ButtonBar>
+              <buttons>
+                <Button fx:id="buttonTasks" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Tasks" />
+                  <Button layoutX="435.0" layoutY="10.0" mnemonicParsing="false" text="Community" />
+                  <Button layoutX="435.0" layoutY="10.0" mnemonicParsing="false" text="Messages" />
+                  <Button fx:id="buttonFriends" layoutX="435.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleButtonFriendsClicked" text="Friends" />
+                  <Button fx:id="buttonProfile" layoutX="435.0" layoutY="10.0" minWidth="61.0" mnemonicParsing="false" onAction="#handleButtonProfileClicked" prefHeight="25.0" text="Profile" />
+              </buttons>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </ButtonBar>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

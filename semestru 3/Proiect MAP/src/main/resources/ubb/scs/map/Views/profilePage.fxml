@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="1000.0" prefWidth="1000.0" stylesheets="@../css/mainWindow.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ubb.scs.map.Controllers.ProfilePageController">
+
+
+   <HBox prefHeight="1000.0" prefWidth="1000.0">
+      <Button onAction="#backToMainMenu" prefHeight="74.0" prefWidth="129.0" styleClass="logout-button" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <graphic>
+            <ImageView fitHeight="72.0" fitWidth="123.0">
+               <Image url="@../icons/arrow-left-long.png" />
+            </ImageView>
+         </graphic>
+      </Button>
+      <VBox alignment="CENTER" prefHeight="500.0" prefWidth="500.0">
+         <ImageView fitHeight="335.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../icons/47.png" />
+         </ImageView>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="500.0" prefWidth="500.0">
+         <Label fx:id="name" styleClass="header" text="nume">
+            <font>
+               <Font size="30.0" />
+            </font>
+         </Label>
+         <Label fx:id="age" styleClass="header" text="age">
+            <font>
+               <Font size="30.0" />
+            </font>
+         </Label>
+         <Label fx:id="joined" styleClass="header" text="joinDate">
+            <font>
+               <Font size="30.0" />
+            </font>
+         </Label>
+      </VBox>
+   </HBox>
+</AnchorPane>

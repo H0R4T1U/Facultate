@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ubb.scs.map.faptebune.Controllers.MainpageController">
+    <SplitPane dividerPositions="0.5" prefHeight="1000.0" prefWidth="1000.0">
+      <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+              <VBox>
+                  <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="23.0" prefWidth="494.0" text="Doresc sa Ajut!">
+                      <font>
+                          <Font name="System Bold Italic" size="18.0" />
+                      </font>
+                  </Label>
+                  <TableView fx:id="tabelNevoi" prefHeight="200.0" prefWidth="200.0">
+                      <columns>
+                          <TableColumn fx:id="colTitlu" prefWidth="83.0" text="Titlu" />
+                          <TableColumn fx:id="colDescriere" prefWidth="83.0" text="Descriere" />
+                          <TableColumn fx:id="colDeadline" prefWidth="83.0" text="Deadline" />
+                          <TableColumn fx:id="colOmInNevoie" prefWidth="83.0" text="Om In Nevoie" />
+                          <TableColumn fx:id="colOmSalvator" prefWidth="83.0" text="Om Salvator" />
+                          <TableColumn fx:id="colStatus" prefWidth="83.0" text="Status" />
+                      </columns>
+                  </TableView>
+               <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="23.0" prefWidth="494.0" text="Fapte bune">
+                  <font>
+                     <Font name="System Bold Italic" size="18.0" />
+                  </font>
+               </Label>
+               <TableView fx:id="faptebune" layoutX="10.0" layoutY="33.0" prefHeight="200.0" prefWidth="200.0">
+                  <columns>
+                     <TableColumn fx:id="colTitlu1" prefWidth="83.0" text="Titlu" />
+                     <TableColumn fx:id="colDescriere1" prefWidth="83.0" text="Descriere" />
+                     <TableColumn fx:id="colDeadline1" prefWidth="84.0" text="Deadline" />
+                     <TableColumn fx:id="colOmInNevoie1" prefWidth="82.0" text="Om In Nevoie" />
+                     <TableColumn fx:id="colOmSalvator1" prefWidth="83.0" text="Om Salvator" />
+                     <TableColumn fx:id="colStatus1" prefWidth="83.0" text="Status" />
+                  </columns>
+               </TableView>
+              </VBox>
+          </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+              <children>
+                  <VBox>
+                      <children>
+                          <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="23.0" prefWidth="493.0" text="Vreau Sa fiu ajutat">
+                              <font>
+                                  <Font name="System Bold Italic" size="18.0" />
+                              </font>
+                          </Label>
+
+                          <Label text="titlu:" />
+                          <TextField fx:id="titlu" />
+                          <Label layoutX="95.0" layoutY="30.0" text="descriere:" />
+                          <TextField fx:id="descriere" layoutX="30.0" layoutY="67.0" />
+                          <Label layoutX="95.0" layoutY="30.0" text="deadline" />
+                     <DatePicker fx:id="deadline" />
+                          <Button mnemonicParsing="false" onAction="#submit" text="Submit" />
+
+                      </children>
+                  </VBox>
+              </children>
+          </AnchorPane>
+      </items>
+    </SplitPane>
+</AnchorPane>

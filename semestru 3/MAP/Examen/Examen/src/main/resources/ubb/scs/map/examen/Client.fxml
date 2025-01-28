@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ubb.scs.map.examen.Controllers.DepartureController">
+   <children>
+      <VBox>
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="653.0" prefWidth="816.0" spacing="20.0">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+                <Label text="Departure" />
+                <ChoiceBox fx:id="DepartureField" prefWidth="150.0" />
+                <Label text="Arival" />
+                <ChoiceBox fx:id="ArivalField" prefWidth="150.0" />
+                <CheckBox fx:id="directField" mnemonicParsing="false" text="Direct Routes only" />
+                <Button mnemonicParsing="false" onAction="#Search" text="Submit" />
+            </VBox>
+             <Label fx:id="UsersSearching"></Label>
+            <ListView fx:id="trainList" prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

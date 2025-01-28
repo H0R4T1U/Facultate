@@ -1,0 +1,46 @@
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/obj/Debug/net9.0/lab13-MAP.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/obj/Debug/net9.0/lab13-MAP.AssemblyInfoInputs.cache
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/obj/Debug/net9.0/lab13-MAP.AssemblyInfo.cs
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/obj/Debug/net9.0/lab13-MAP.csproj.CoreCompileInputs.cache
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/bin/Debug/net9.0/lab13-MAP.exe
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/bin/Debug/net9.0/lab13-MAP.deps.json
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/bin/Debug/net9.0/lab13-MAP.runtimeconfig.json
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/bin/Debug/net9.0/lab13-MAP.dll
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/bin/Debug/net9.0/lab13-MAP.pdb
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/bin/Debug/net9.0/Microsoft.Extensions.Logging.Abstractions.dll
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/bin/Debug/net9.0/Npgsql.dll
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/obj/Debug/net9.0/lab13-MAP.csproj.AssemblyReference.cache
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/obj/Debug/net9.0/lab13-MAP.csproj.Up2Date
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/obj/Debug/net9.0/lab13-MAP.dll
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/obj/Debug/net9.0/refint/lab13-MAP.dll
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/obj/Debug/net9.0/lab13-MAP.pdb
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/obj/Debug/net9.0/lab13-MAP.genruntimeconfig.cache
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/obj/Debug/net9.0/ref/lab13-MAP.dll
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/bin/Debug/net9.0/resources/ActivePlayers.csv
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/bin/Debug/net9.0/resources/Matches.csv
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/bin/Debug/net9.0/resources/Players.csv
+C:/Users/baroa/RiderProjects/lab13-MAP/lab13-MAP/bin/Debug/net9.0/resources/Teams.csv
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/bin/Debug/net9.0/lab13-MAP
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/bin/Debug/net9.0/resources/ActivePlayers.csv
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/bin/Debug/net9.0/resources/Matches.csv
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/bin/Debug/net9.0/resources/Players.csv
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/bin/Debug/net9.0/resources/Teams.csv
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/bin/Debug/net9.0/lab13-MAP.deps.json
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/bin/Debug/net9.0/lab13-MAP.runtimeconfig.json
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/bin/Debug/net9.0/lab13-MAP.dll
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/bin/Debug/net9.0/lab13-MAP.pdb
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/bin/Debug/net9.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/bin/Debug/net9.0/Npgsql.dll
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/obj/Debug/net9.0/lab13-MAP.csproj.AssemblyReference.cache
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/obj/Debug/net9.0/lab13-MAP.GeneratedMSBuildEditorConfig.editorconfig
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/obj/Debug/net9.0/lab13-MAP.AssemblyInfoInputs.cache
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/obj/Debug/net9.0/lab13-MAP.AssemblyInfo.cs
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/obj/Debug/net9.0/lab13-MAP.csproj.CoreCompileInputs.cache
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/obj/Debug/net9.0/lab13-MAP.csproj.Up2Date
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/obj/Debug/net9.0/lab13-MAP.dll
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/obj/Debug/net9.0/refint/lab13-MAP.dll
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/obj/Debug/net9.0/lab13-MAP.pdb
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/obj/Debug/net9.0/lab13-MAP.genruntimeconfig.cache
+/Users/horatiubanciu/code/Faculta/An 2 Sem 1/babes_metode_avansate_de_programare/Laboratoare_teme/Laborator13/obj/Debug/net9.0/ref/lab13-MAP.dll

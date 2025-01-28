@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="1000.0" prefWidth="1000.0" stylesheets="@../css/mainWindow.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ubb.scs.map.Controllers.MessageController">
+    <VBox layoutY="14.0" prefHeight="650.0" prefWidth="1014.0" spacing="15.0">
+        <Button mnemonicParsing="false" onAction="#backToMainMenu" prefHeight="32.0" prefWidth="54.0">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0">
+                    <Image url="@../icons/arrow-left-long.png" />
+                </ImageView>
+            </graphic>
+        </Button>
+        <SplitPane dividerPositions="0.29797979797979796" prefHeight="585.0" prefWidth="992.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="427.0" prefWidth="175.0">
+                 <ListView fx:id="chats" layoutX="7.0" prefHeight="583.0" prefWidth="284.0" styleClass="styled-list" />
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="583.0" prefWidth="611.0">
+                <VBox layoutX="4.0" prefHeight="583.0" prefWidth="691.0" spacing="10.0">
+                    <ListView fx:id="messages" minWidth="-Infinity" prefHeight="518.0" prefWidth="660.0" styleClass="styled-list" />
+                    <HBox prefHeight="4.0" prefWidth="697.0" spacing="5.0" styleClass="message_box">
+                        <TextArea fx:id="messageBox" prefHeight="59.0" prefWidth="584.0" promptText="Your message" />
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#sendMessage" prefHeight="64.0" prefWidth="111.0" styleClass="add-button" text="SEND" />
+                    </HBox>
+                </VBox>
+            </AnchorPane>
+        </SplitPane>
+    </VBox>
+</AnchorPane>

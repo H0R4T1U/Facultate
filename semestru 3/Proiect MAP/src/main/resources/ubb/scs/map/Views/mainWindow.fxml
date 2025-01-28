@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="1000.0" prefWidth="1000.0" styleClass="header" stylesheets="@../css/mainWindow.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ubb.scs.map.Controllers.MainWindowController">
+    <!-- Logout Button -->
+    <Button onAction="#logout" styleClass="logout-button" text="Logout" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+        <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0">
+                <Image url="@../icons/user-secret.png" />
+            </ImageView>
+        </graphic>
+    </Button>
+
+    <!-- Horizontally Centered SplitPane -->
+    <SplitPane dividerPositions="0.4242081447963801" layoutY="64.0" orientation="VERTICAL" prefHeight="886.0" prefWidth="785.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="115.0" AnchorPane.topAnchor="64.0">
+
+        <!-- Top Pane -->
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="412.0" prefWidth="783.0">
+            <VBox layoutX="-4.0" layoutY="-6.0">
+                <!-- Title Label -->
+                <Label contentDisplay="CENTER" styleClass="header" text="FRIENDS" textAlignment="CENTER">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+
+                <!-- TableView -->
+                <TableView fx:id="tableView" prefHeight="308.0" prefWidth="783.0" styleClass="styled-table">
+                    <columns>
+                        <TableColumn fx:id="tableColumnName" prefWidth="779.0" styleClass="table-column" text="Name" />
+                    </columns>
+                </TableView>
+
+                <HBox prefHeight="31.0" prefWidth="783.0">
+                    <Button fx:id="buttonPrevious" mnemonicParsing="false" onAction="#handleButtonPreviousClicked" text="Previous" />
+                    <Label fx:id="labelPageNumber" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="364.0" text="Label" textFill="WHITE">
+                        <font>
+                            <Font name="Cooper Black" size="18.0" />
+                        </font>
+                    </Label>
+                    <Button fx:id="buttonNext" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#handleButtonNextClicked" text="Next" />
+                </HBox>
+            </VBox>
+        </AnchorPane>
+
+
+        <!-- Bottom Pane -->
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="466.0" prefWidth="783.0" styleClass="action-section">
+            <VBox spacing="10">
+                <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="48.0" prefWidth="783.0" spacing="10">
+                    <Label prefHeight="29.0" prefWidth="77.0" text="Routes:" />
+               <Button layoutX="279.0" layoutY="10.0" minWidth="165.0" mnemonicParsing="false" onAction="#toProfile" prefHeight="50.0" prefWidth="220.0" styleClass="default-button" text="Profile">
+                  <graphic>
+                      <ImageView fitHeight="20.0" fitWidth="20.0">
+                          <Image url="@../icons/user.png"/>
+                      </ImageView>
+                  </graphic>
+               </Button>
+                    <Button minWidth="165.0" mnemonicParsing="false" onAction="#toRequests" prefHeight="50.0" prefWidth="220.0" styleClass="default-button" text="Requests">
+                        <graphic>
+                            <ImageView fitHeight="20.0" fitWidth="20.0">
+                                <Image url="@../icons/users.png" />
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button minWidth="165.0" mnemonicParsing="false" onAction="#toMessages" prefHeight="50.0" prefWidth="220.0" styleClass="default-button" text="Messages">
+                        <graphic>
+                            <ImageView fitHeight="20.0" fitWidth="20.0">
+                                <Image url="@../icons/envelope-dot.png" />
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
+            <Label styleClass="header" text="Users" />
+            <ListView fx:id="userList" minWidth="-Infinity" prefHeight="200.0" prefWidth="783.0" styleClass="styled-list" />
+
+                <HBox alignment="CENTER" spacing="10">
+                    <!-- Search Bar -->
+                    <TextField fx:id="searchBar" prefHeight="50.0" prefWidth="245.0" promptText="User" />
+
+                    <!-- Add Button -->
+                    <Button minWidth="171.0" onAction="#addFriend" prefHeight="50.0" prefWidth="245.0" styleClass="add-button" text="Add">
+                        <graphic>
+                            <ImageView fitHeight="20.0" fitWidth="20.0">
+                                <Image url="@../icons/user-plus.png" />
+                            </ImageView>
+                        </graphic>
+                    </Button>
+
+                    <!-- Delete Button -->
+                    <Button minWidth="171.0" onAction="#removeFriend" prefHeight="50.0" prefWidth="245.0" styleClass="remove-button" text="Delete">
+                        <graphic>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" styleClass="remove-button">
+                                <Image url="@../icons/user-minus.png" />
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
+            </VBox>
+
+        </AnchorPane>
+
+    </SplitPane>
+</AnchorPane>

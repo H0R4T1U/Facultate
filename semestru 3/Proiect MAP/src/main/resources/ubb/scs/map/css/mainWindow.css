@@ -1,0 +1,171 @@
+/* mainWindow.css */
+
+/* General Settings */
+*{
+    -fx-font-family: "-apple-system", ".SF NS Text", sans-serif;
+
+}
+.root {
+    -fx-font-family: "-apple-system", ".SF NS Text", sans-serif;
+    -fx-base: #2b2b2b;
+    -fx-background-color: #1e1e1e;
+    -fx-text-fill: #ffffff;
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: #e0e0e0;
+}
+
+.header {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(to bottom, #ffffff, #d9d9d9);
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 8px 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 4, 0, 0, 1);
+}
+
+.button:hover {
+    -fx-background-color: #505357;
+}
+
+.logout-button {
+    -fx-background-color: #d9534f;
+    -fx-text-fill: #ffffff;
+}
+
+.logout-button:hover {
+    -fx-background-color: #c9302c;
+}
+
+.add-button {
+    -fx-background-color: #5cb85c;
+    -fx-text-fill: #ffffff;
+}
+
+.add-button:hover {
+    -fx-background-color: #4cae4c;
+}
+
+.remove-button {
+    -fx-background-color: #d9534f;
+    -fx-text-fill: #ffffff;
+}
+
+.remove-button:hover {
+    -fx-background-color: #c9302c;
+}
+
+.default-button {
+    -fx-background-color: #337ab7;
+    -fx-text-fill: #ffffff;
+}
+
+.default-button:hover {
+    -fx-background-color: #286090;
+}
+
+/* Input Fields */
+.text-field, .password-field, .text-area {
+    -fx-background-color: #2c2f33;
+    -fx-text-fill: #d9d9d9;
+    -fx-border-color: #45494e;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 6px;
+}
+
+.text-field:focused, .password-field:focused, .text-area:focused {
+    -fx-border-color: #5cb85c;
+    -fx-background-color: #33363b;
+}
+
+/* ListView */
+.styled-list {
+    -fx-control-inner-background: #2c2f33;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #45494e;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.styled-list .list-cell:filled:selected,
+.styled-list .list-cell:filled:selected:focused {
+    -fx-background-color: #5cb85c;
+    -fx-text-fill: #ffffff;
+}
+
+/* TableView */
+.styled-table {
+    -fx-control-inner-background: #2c2f33;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #45494e;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.styled-table .column-header-background {
+    -fx-background-color: #45494e;
+}
+
+.styled-table .table-cell {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: transparent; /* Default background */
+}
+
+.styled-table .table-row-cell:selected {
+    -fx-background-color: #5cb85c;
+    -fx-text-fill: #ffffff;
+}
+
+.styled-table .table-row-cell:focused:selected {
+    -fx-background-color: #5cb85c;
+    -fx-text-fill: #ffffff;
+}
+
+/* ButtonBar */
+.action-section {
+    -fx-background-color: #1e1e1e;
+    -fx-padding: 10px;
+}
+
+/* VBox and HBox Styling */
+.login_param, .message_box {
+    -fx-background-color: #2c2f33;
+    -fx-border-color: #45494e;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+/* SplitPane */
+.split-pane {
+    -fx-background-color: #1e1e1e;
+    -fx-divider-position: 0.5;
+}
+
+.split-pane > .split-pane-divider {
+    -fx-background-color: #45494e;
+}
+.reply-label {
+    -fx-font-style: italic;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+.user-label{
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(to bottom, #ffffff, #d9d9d9);
+}
+
+.anchor:hover {
+    -fx-text-fill: #505357;
+
+}

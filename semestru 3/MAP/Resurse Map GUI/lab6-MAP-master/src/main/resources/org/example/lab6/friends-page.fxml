@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.lab6.controller.FriendsPageController">
+    <children>
+        <VBox prefHeight="500.0" prefWidth="500.0" spacing="20" styleClass="vbox">
+            <children>
+                <!-- Title Section -->
+                <Label style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #374151;" text="Friends and Requests" />
+
+                <!-- Requests and Friends Section -->
+                <HBox alignment="CENTER" spacing="30">
+                    <!-- Requests Section -->
+                    <VBox spacing="15" styleClass="vbox">
+                        <children>
+                            <Label style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #4a4a4a;" text="Requests" />
+                            <ListView fx:id="listViewRequests" stylesheets="@css/styles.css" />
+                            <ButtonBar>
+                                <buttons>
+                                    <Button fx:id="buttonAcceptRequest" onAction="#handleButtonAcceptRequestClicked" styleClass="button" text="Accept" />
+                                    <Button fx:id="buttonDeleteRequest" onAction="#handleButtonDeleteRequestClicked" styleClass="button" text="Delete" />
+                                </buttons>
+                            </ButtonBar>
+                        </children>
+                    </VBox>
+
+                    <!-- Friends Section -->
+                    <VBox spacing="15" styleClass="vbox">
+                        <children>
+                            <Label style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #4a4a4a;" text="Friends" />
+                            <ListView fx:id="listViewFriends" styleClass="list-view" />
+                            <ButtonBar>
+                                <buttons>
+                                    <Button fx:id="buttonAddFriend" onAction="#handleButtonAddFriendClicked" styleClass="button" text="Add Friend" />
+                                    <Button fx:id="buttonDeleteFriend" onAction="#handleButtonDeleteFriendClicked" styleClass="button" text="Delete Friend" />
+                                </buttons>
+                            </ButtonBar>
+                        </children>
+                    </VBox>
+                </HBox>
+
+                <!-- Bottom Navigation Buttons -->
+                <ButtonBar>
+                    <buttons>
+                        <Button fx:id="buttonTasks" onAction="#handleButtonTasksClicked" styleClass="button" text="Tasks" />
+                        <Button styleClass="button" text="Community" />
+                        <Button styleClass="button" text="Messages" />
+                        <Button styleClass="button" text="Friends" />
+                        <Button fx:id="buttonProfile" onAction="#handleButtonProfileClicked" styleClass="button" text="Profile" />
+                    </buttons>
+                </ButtonBar>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

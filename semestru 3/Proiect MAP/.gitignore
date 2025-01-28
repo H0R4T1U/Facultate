@@ -1,0 +1,7 @@
+/src/main/resources/application.properties
+/.gradle/
+/.idea/
+/build/
+/gradle/
+.DS_Store
+

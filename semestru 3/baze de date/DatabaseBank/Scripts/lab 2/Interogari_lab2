@@ -1,0 +1,75 @@
+Use Bank;
+
+-- 1.   Afisare clienti ce sunt primari pe un imprumut personal M-N 
+SELECT c.client_id, c.first_name, c.last_name, l.loan_id, l.loan_type
+FROM Clients c
+JOIN Client_Loans cl ON c.client_id = cl.client_id
+JOIN Loans l ON cl.loan_id = l.loan_id
+WHERE cl.role = 'Primary' AND l.loan_type = 'Personal';
+
+-- 2. Afiseaza Toate tranzactiile unei persoane dupa numele de familie M-N
+SELECT c.client_id, c.first_name, c.last_name, t.transaction_id, t.transaction_type, t.amount
+FROM Clients c
+JOIN ClientsAccounts ca ON c.client_id = ca.client_id
+JOIN Transactions t ON ca.account_id = t.account_id
+WHERE c.last_name = 'Popa';
+
+-- 3. Afiseaza Pozitiile a caror medie salariala este de peste 6000
+SELECT position, AVG(salary) AS total_salary
+FROM Employees
+GROUP BY position
+HAVING AVG(salary) > 6000;
+
+-- 4. Toate Transactiile clientilor dintr-o anumita sucursala
+SELECT c.client_id, c.first_name, c.last_name, t.transaction_id, t.amount, t.transaction_date
+FROM Clients c
+JOIN Transactions t ON c.client_id = t.account_id
+JOIN Branches b ON c.branch_id = b.branch_id
+WHERE b.city = 'Cluj';
+
+-- 5. Suma totala din conturi din fiecare sucursala
+SELECT b.branch_id, b.name, SUM(a.balance) AS total_balance
+FROM Branches b
+JOIN Clients c ON b.branch_id = c.branch_id
+JOIN Accounts a ON c.client_id = a.account_id
+GROUP BY b.branch_id, b.name;
+
+-- 6.  Afiseaza clienti cu imprumuturi mai mari de 10000 din fiecare sucursala
+SELECT b.branch_id, b.name, c.client_id, c.first_name, c.last_name, SUM(l.loan_amount) AS total_loan_amount
+FROM Clients c
+JOIN Branches b ON c.branch_id = b.branch_id
+JOIN Client_Loans cl ON c.client_id = cl.client_id
+JOIN Loans l ON cl.loan_id = l.loan_id
+GROUP BY b.branch_id, b.name, c.client_id, c.first_name, c.last_name
+HAVING SUM(l.loan_amount) > 10000;
+
+-- 7. Afiseaza tipurile unice de tranzactii suma lor si nr acestora pe fiecare sucursala.
+SELECT DISTINCT t.transaction_type,  b.name, SUM(t.amount) as transaction_amount ,COUNT(t.transaction_id) AS transaction_count
+FROM Transactions t
+JOIN Accounts a ON t.account_id = a.account_id
+JOIN Clients c ON a.account_id = c.client_id
+JOIN Branches b ON c.branch_id = b.branch_id
+GROUP BY t.transaction_type, b.name
+ORDER BY  b.name, t.transaction_type;
+
+-- 8. Numarul de tipuri diferite de conturi din fiecare sucursala
+SELECT DISTINCT b.name,a.status,COUNT(a.status) as number_of
+FROM Accounts a
+JOIN Clients c ON a.account_id = c.client_id
+JOIN Branches b ON c.branch_id = b.branch_id
+GROUP BY a.[status],b.name
+
+-- 9. Plati imprumuturi din ultima luna
+SELECT p.payment_id, p.amount, p.payment_date, l.loan_id, c.first_name, c.last_name
+FROM Payments p
+JOIN Loans l ON p.loan_id = l.loan_id
+JOIN Client_Loans cl ON l.loan_id = cl.loan_id
+JOIN Clients c ON cl.client_id = c.client_id
+WHERE p.payment_date > DATEADD(MONTH, -1, GETDATE());
+
+-- 10. Suma depozitelor din fiecare sucursala
+SELECT b.branch_id, b.name, SUM(d.amount) AS total_deposits
+FROM Branches b
+JOIN Clients c ON b.branch_id = c.branch_id
+JOIN Deposits d ON c.client_id = d.client_id
+GROUP BY b.branch_id, b.name;

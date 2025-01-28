@@ -1,0 +1,34 @@
+/* General VBox Styling */
+.vbox {
+    -fx-background-color: #ffffff;
+    -fx-padding: 15;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+/* ListView Styling */
+.list-view {
+    -fx-background-color: #f9fafb;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+/* Button Styling */
+.button {
+    -fx-background-color: #4c9fd3;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-font-size: 14px;
+    -fx-wrap-text: true;
+}
+
+.button:hover {
+    -fx-background-color: #3b82d6; /* Lighter blue on hover */
+}
+
+.list-cell {
+    -fx-wrap-text: true;
+    -fx-alignment: top-left;
+}

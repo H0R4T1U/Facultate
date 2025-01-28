@@ -1,0 +1,8 @@
+tcp:
+    server:socket bind listen accept(l)
+    client: socket, connect
+    send recv
+udp:
+    server socket bind
+    client socket 
+    sendto recvfrom

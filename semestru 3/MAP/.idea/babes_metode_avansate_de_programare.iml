@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/Laboratoare_teme/SocialNetwork/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/Laboratoare_teme/SocialNetwork/.idea/dataSources" />
+      <excludeFolder url="file://$MODULE_DIR$/Laboratoare_teme/SocialNetwork/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Seminarii/Seminar 2/out" />
+      <excludeFolder url="file://$MODULE_DIR$/Seminarii/Seminar 3 /curs3/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/Seminarii/Seminar 3 /curs3/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Seminarii/Seminar 4/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/Seminarii/Seminar 4/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Seminarii/lab6-exemplu-GUI/guiex1/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/Seminarii/lab6-exemplu-GUI/guiex1/.idea/dataSources" />
+      <excludeFolder url="file://$MODULE_DIR$/Seminarii/lab6-exemplu-GUI/guiex1/build" />
+      <excludeFolder url="file://$MODULE_DIR$/laboratoare_clasa/VehicleManagement lab 5/out" />
+      <excludeFolder url="file://$MODULE_DIR$/laboratoare_clasa/exercitii/out" />
+      <excludeFolder url="file://$MODULE_DIR$/laboratoare_clasa/guiex1/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/laboratoare_clasa/lab_3/out" />
+      <excludeFolder url="file://$MODULE_DIR$/laboratoare_clasa/lab_6/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

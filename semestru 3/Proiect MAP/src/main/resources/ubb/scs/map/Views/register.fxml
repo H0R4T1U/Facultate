@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import com.sun.javafx.scene.control.IntegerField?>
+<AnchorPane prefHeight="1000" prefWidth="1000" stylesheets="@../css/mainWindow.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ubb.scs.map.Controllers.RegisterController">
+    <VBox alignment="CENTER" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Label styleClass="header" text="Register">
+            <font>
+                <Font size="30.0" />
+            </font></Label>
+        <VBox alignment="CENTER" spacing="15.0" styleClass="login_param">
+            <Label text="Username" />
+            <TextField fx:id="usernameField" />
+        </VBox>
+        <VBox alignment="CENTER" spacing="15.0" styleClass="login_param">
+            <Label text="Password" />
+            <PasswordField fx:id="passwordField" />
+        </VBox>
+        <VBox alignment="CENTER" spacing="15.0" styleClass="login_param">
+            <Label text="Age" />
+            <TextField fx:id="ageField" />
+        </VBox>
+        <VBox alignment="CENTER" spacing="15.0" styleClass="login_param">
+            <Label text="Phone Numberq" />
+            <TextField fx:id="PhoneNumberField" />
+        </VBox>
+        <Button onAction="#signUp" text="Register" />
+        <Label styleClass="anchor" onMouseClicked="#signIn"  text="Already have an account?" />
+    </VBox>
+</AnchorPane>

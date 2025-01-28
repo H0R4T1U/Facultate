@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.lab6.controller.LoginPageController">
+   <children>
+      <VBox alignment="CENTER" layoutX="164.0" layoutY="27.0" prefHeight="447.0" prefWidth="172.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="61.0" prefWidth="142.0" text="NeighbourLink">
+               <font>
+                  <Font name="Cambria Italic" size="22.0" />
+               </font></Label>
+            <Separator opacity="0.0" prefHeight="18.0" prefWidth="100.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="142.0" text="Username:" />
+            <TextField fx:id="textFieldUsername" alignment="CENTER" prefHeight="25.0" />
+            <Label alignment="CENTER" prefHeight="32.0" prefWidth="141.0" text="Password:" />
+            <PasswordField fx:id="passwordFieldPassword" />
+            <Separator layoutX="10.0" layoutY="219.0" opacity="0.0" prefHeight="18.0" prefWidth="100.0" />
+            <Button fx:id="buttonLogin" mnemonicParsing="false" onAction="#handleButtonLoginClicked" prefHeight="25.0" text="Log in" />
+            <Separator layoutX="10.0" layoutY="294.0" opacity="0.0" prefHeight="36.0" prefWidth="172.0" />
+            <Label alignment="CENTER" prefHeight="46.0" prefWidth="172.0" text="New to NeighbourLink ?" />
+            <Button fx:id="registerButton" mnemonicParsing="false" onAction="#handleButtonRegisterClicked" prefHeight="25.0" text="Register now!" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

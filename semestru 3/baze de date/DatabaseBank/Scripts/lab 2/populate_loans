@@ -1,0 +1,6 @@
+Use Bank;
+INSERT INTO Loans ( loan_amount, loan_type, interest_rate, issue_date, due_date, remaining_balance)
+VALUES 
+  ( 20000, 'Personal', 5.5, '2021-06-15', '2026-06-15', 15000),
+  ( 15000, 'Auto', 3.2, '2022-04-10', '2027-04-10', 12000),
+  ( 10000, 'Home', 4.8, '2020-07-25', '2025-07-25', 5000);
