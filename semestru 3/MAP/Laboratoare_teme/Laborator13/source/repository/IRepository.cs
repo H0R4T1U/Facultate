@@ -7,4 +7,6 @@ public interface IRepository<in TId, TE> where TE : Entity<TId>
     TE FindOne(TId id);
     IEnumerable<TE> FindAll();
     TE Save(TE entity);
+    TE delete(TId id);
+    TE update(TE entity);
 }
