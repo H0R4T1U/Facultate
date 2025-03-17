@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formular de Aplicare pentru Programul de Voluntariat</title>
+</head>
+<body>
+    <h1>Formular de Aplicare pentru Programul de Voluntariat</h1>
+    <h3>Formular realizat respectând standardele actuale</h3>
+    <h4><em>Data aplicării:</em> <input type="date" id="dataAplicare" name="dataAplicare"></h4>
+
+    <form action="submit_confirmation.html" class="form-container">
+        <fieldset>
+            <legend><b>Date personale</b></legend>
+            <label for="nume">Nume:</label>
+            <input type="text" id="nume" name="nume" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="telefon">Telefon:</label>
+            <input type="tel" id="telefon" name="telefon" maxlength="10" required><br>
+            <label for="adresa">Adresă:</label>
+            <input type="text" id="adresa" name="adresa"><br>
+            <label for="judet">Județ:</label>
+            <select id="judet" name="judet">
+                <option value="Cluj" selected>Cluj</option>
+                <option value="Alba">Alba</option>
+                <option value="Arad">Arad</option>
+                <option value="Arges">Argeș</option>
+            </select><br>
+            <label for="oras">Oraș:</label>
+            <input type="text" id="oras" name="oras" value="Cluj-Napoca" readonly><br>
+            <label>Sex:</label>
+            <input type="radio" id="masculin" name="sex" value="M" checked>
+            <label for="masculin">Masculin</label>
+            <input type="radio" id="feminin" name="sex" value="F">
+            <label for="feminin">Feminin</label>
+        </fieldset>
+        
+        <fieldset>
+            <legend><b>Educație</b></legend>
+            <label for="scoala">Școală:</label>
+            <input type="text" id="scoala" name="scoala"><br>
+            <label for="liceu">Liceu:</label>
+            <input type="text" id="liceu" name="liceu"><br>
+            <label for="facultate">Facultate:</label>
+            <input type="text" id="facultate" name="facultate"><br>
+            <label for="message">Alte detalii:</label>
+            <textarea id="message" name="message" rows="5" cols="50"></textarea>
+        </fieldset>
+        
+        <fieldset>
+            <legend><b>Preferințe pentru Voluntariat</b></legend>
+            <p>Selectează activitățile care te interesează:</p>
+            <input type="checkbox" id="activitate1" name="activitate1" value="activitate1">
+            <label for="activitate1">Ajutor la organizarea de evenimente</label><br>
+            <input type="checkbox" id="activitate2" name="activitate2" value="activitate2">
+            <label for="activitate2">Mentorat pentru tineri</label><br>
+            <label for="disponibilitate">Număr de ore de voluntariat pe săptămână:</label>
+            <input type="number" id="disponibilitate" name="disponibilitate" value="5" min="1">
+        </fieldset>
+        
+        <fieldset>
+            <legend><b>Experiență în Voluntariat</b></legend>
+            <p>Ai experiență anterioară? Descrie mai jos:</p>
+            <textarea name="experienta" rows="5" cols="50"></textarea>
+        </fieldset>
+        
+        <fieldset>
+            <legend><b>Atașamente</b></legend>
+            <label for="files">Atașează CV: </label>
+            <input type="file" id="files" name="files">
+        </fieldset>
+        
+        <button type="reset">Resetează</button>
+        <button type="submit">Trimite</button>
+    </form>
+</body>
+</html>
