@@ -1,0 +1,38 @@
+<annotation>
+	<folder>L3</folder>
+	<filename>test1.png</filename>
+	<path>/Users/horatiubanciu/code/Facultate/semestru 4/ai/lab03_OCR/test1.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>500</width>
+		<height>323</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Platform</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>237</xmin>
+			<ymin>113</ymin>
+			<xmax>349</xmax>
+			<ymax>152</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Google Cloud</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>176</xmin>
+			<ymin>42</ymin>
+			<xmax>417</xmax>
+			<ymax>107</ymax>
+		</bndbox>
+	</object>
+</annotation>
