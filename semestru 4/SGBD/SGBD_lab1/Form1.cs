@@ -21,7 +21,6 @@ namespace SGBD_lab1
         private void Form1_Load(object sender, EventArgs e)
         {
             // 1. Prepare your connection string
-            string connectionString = "Data Source=10.211.55.2;Initial Catalog=Bank;Persist Security Info=True;User ID=SA;Password=Strong.Pwd-123;Encrypt=True;Trust Server Certificate=True";
             conn = new SqlConnection(connectionString);
 
             // 2. Initialize adapters
