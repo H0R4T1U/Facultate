@@ -1,0 +1,52 @@
+.social-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.social-menu li {
+    width: 80px; 
+    height: 80px;
+    margin: 5px; 
+}
+
+
+.vertical li {
+    display: block;
+}
+
+.horizontal li {
+    display: inline-block;
+}
+
+.facebook {
+    background-image: url("./css-pr4.png");
+    background-position: 0px 0px;
+}
+.facebook:hover {
+    background-position:  0px -85px;
+}
+
+.dot {
+    background-image: url("./css-pr4.png");
+    background-position: -85px 0px;
+}
+.dot:hover {
+    background-position: -85px -85px;
+}
+
+.ball {
+    background-image: url("./css-pr4.png");
+    background-position: -170px 0;
+}
+.ball:hover {
+    background-position: -170px -85px;
+}
+
+.google {
+    background-image: url("./css-pr4.png");
+    background-position: -255px 0;
+}
+.google:hover {
+    background-position: -255px -85px;
+}
+

@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.image-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: yellow;
+    border: 2px solid black;
+    width: 300px;
+}
+
+.image-list li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+
+.image-list img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+

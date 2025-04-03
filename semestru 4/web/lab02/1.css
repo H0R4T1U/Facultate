@@ -1,0 +1,23 @@
+
+.main {
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left {
+    width: 200px;
+    text-align: center;
+    margin: auto;
+}
+
+.right {
+    text-align: center;
+    margin: auto;
+}
+
+.img_right {
+    width: 100%;
+    max-width: 200px;
+}

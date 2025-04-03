@@ -1,0 +1,22 @@
+<annotation>
+    <folder>bikes</folder>
+    <filename>bike09.jpg</filename>
+    <size>
+        <width>416</width>
+        <height>416</height>
+        <depth>3</depth>
+    </size>
+    <object>
+        <name>bike</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1.997596</xmin>
+            <ymin>12.971158</ymin>
+            <xmax>385.074524</xmax>
+            <ymax>401.036072</ymax>
+        </bndbox>
+    </object>
+</annotation>

@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.image-list {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    background-color: white;
+    border: 2px solid black;
+    width: 500px;
+    padding: 20px;
+}
+
+.image-list li {
+    text-align: center;
+    background-color: cyan;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.image-list img {
+    width: 100px;
+    height: 100px;
+
+}
+
