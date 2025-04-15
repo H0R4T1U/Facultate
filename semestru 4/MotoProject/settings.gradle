@@ -1,0 +1,8 @@
+rootProject.name = 'MotoProject'
+include 'Model'
+include 'Persistence'
+include 'Service'
+include 'Networking'
+include 'Server'
+include 'Client'
+

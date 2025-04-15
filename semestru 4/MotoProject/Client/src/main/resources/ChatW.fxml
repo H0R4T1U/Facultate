@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="1200.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainController">
+    <VBox prefHeight="1200.0" prefWidth="1000.0">
+        <HBox prefHeight="177.0" prefWidth="1000.0">
+            <TableView fx:id="raceTable" prefHeight="145.0" prefWidth="471.0">
+                <columns>
+                    <TableColumn fx:id="racePlayersColumn" prefWidth="235.0" text="Number of Players" />
+                    <TableColumn fx:id="raceEngineColumn" prefWidth="235.0" text="Engine Type" />
+                </columns>
+            </TableView>
+            <VBox alignment="CENTER" prefHeight="210.0" prefWidth="528.0">
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="528.0" text="Echipa" />
+                <TextField fx:id="teamSearch" promptText="Search" />
+                <Button alignment="CENTER" contentDisplay="CENTER" onAction="#handleSearchTeam" mnemonicParsing="false" prefHeight="25.0" prefWidth="573.0" text="Cauta" textAlignment="CENTER" />
+            </VBox>
+        </HBox>
+        <HBox prefHeight="210.0" prefWidth="1000.0">
+            <TableView fx:id="playerTable" prefHeight="210.0" prefWidth="471.0">
+                <columns>
+                    <TableColumn fx:id="playerNameColumn" prefWidth="235.0" text="Name" />
+                    <TableColumn fx:id="playerTeamColumn" prefWidth="235.0" text="Team" />
+                </columns>
+            </TableView>
+            <VBox alignment="CENTER" prefHeight="210.0" prefWidth="528.0">
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="528.0" text="Nume" />
+                <TextField fx:id="playerNameAdd" promptText="Nume" />
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="81.0" prefHeight="17.0" prefWidth="528.0" text="CNP" />
+                <TextField fx:id="playerCodeAdd" layoutX="10.0" layoutY="98.0" promptText="Cnp" />
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="128.0" prefHeight="17.0" prefWidth="528.0" text="Echipa" />
+                <TextField fx:id="playerTeamAdd" layoutX="10.0" layoutY="145.0" promptText="Echipa" />
+                <Button alignment="CENTER" contentDisplay="CENTER" onAction="#handleAddPlayer" mnemonicParsing="false" prefHeight="25.0" prefWidth="573.0" text="Adauga Jucator" textAlignment="CENTER" />
+            </VBox>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <Button mnemonicParsing="false" onAction="#handleLogout" text="LOGOUT" textAlignment="CENTER" />
+        </HBox>
+    </VBox>
+</AnchorPane>
