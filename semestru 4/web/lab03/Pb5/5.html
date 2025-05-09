@@ -1,0 +1,87 @@
+<!--Intr-o pagina HTML exista o lista descrisa cu ajutorul tagului <ol>. Fiecare element din lista (<li>) contine
+    o imagine (<img>), si un link (<a>). Elemente listei, mai putin primul dintre ele, nu sunt vizibile initial
+    (se poate folosi in acest sens CSS). Afisarea unui element din lista presupune afisarea imaginii si a textului
+    ca link peste imagine (a se vedea ca exemplu carouselul din pagina facultatii). Dupa n secunde printr-un efect
+    de tranzitie va fi afisat urmatorul element din lista. Se vor implementa si doua butoane Next si Previous care
+    vor permite afisarea elementelor urmatoare sau anterioare fara a se astepta trecerea celor n secunde. Nu se vor
+    folosi biblioteci de functii, jQuery, pluginuri, etc.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        #myList {
+            position: relative;
+            z-index: 1;
+        }
+        #myList li {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #myList li:first-child {
+            display: flex;
+        }
+        #myList a {
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+        img {
+            width: 600px;
+            height: 600px;
+            padding-bottom: 10px;
+        }
+        #prev, #next {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+    <script src="./index.js" defer></script>
+
+</head>
+<body>
+    <div id="container">
+        <ol id="myList">
+            <li>
+                <img src="../Pb3/cartof.jpg"><a href="#">Link 1</a></li>
+            <li>
+                <img src="../Pb3/macaroane.jpg"><a href="#">Link 2</a></li>
+            <li>
+                <img src="../Pb3/ceapa.jpg"><a href="#">Link 3</a></li>
+            <li>
+                <img src="../Pb3/castraveti.jpg"><a href="#">Link 4</a></li>
+        </ol>
+    </div>
+    <div id="buttons">
+        <button id="prev">Previous</button>
+        <button id="next">Next</button>
+    </div>
+
+
+</body>
+</html>

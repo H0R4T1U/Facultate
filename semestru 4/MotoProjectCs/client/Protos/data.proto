@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package services;
+
+option java_package = "services.grpc";
+option java_outer_classname = "MotoServiceProto";
+
+message User {
+  int32 id = 1;
+  string username = 2;
+  string password = 3;
+}
+
+message Player {
+  int32 id = 1;
+  string name = 2;
+  string code = 3;
+  int32 team = 4;
+}
+
+message Team {
+  int32 id = 1;
+  string name = 2;
+}
+
+message Race {
+  int32 id = 1;
+  int32 engineType = 2;
+  int32 noPlayers = 3;
+  repeated Player players = 4;
+}
+
+message Empty {}
+
+message LoginRequest {
+  User user = 1;
+}
+
+message LoginResponse {
+  string message = 1;
+}
+
+message AddPlayerRequest {
+  Player player = 1;
+  int32 raceId = 2;
+}
+
+message TeamRequest {
+  string name = 1;
+}
+
+message RacePlayersRequest {
+  int32 raceId = 1;
+  int32 teamId = 2;
+}
+
+message RacePlayersResponse {
+  repeated Player players = 1;
+}
+
+service MotoService {
+  rpc Login(LoginRequest) returns (LoginResponse);
+  rpc Logout(LoginRequest) returns (LoginResponse);
+  rpc AddPlayer(AddPlayerRequest) returns (Empty);
+  rpc GetTeamByName(TeamRequest) returns (Team);
+  rpc GetAllRaces(Empty) returns (stream Race);
+  rpc GetRacePlayersOfTeam(RacePlayersRequest) returns (RacePlayersResponse);
+  rpc SubscribeToPlayerUpdates(User) returns (stream Player);
+}

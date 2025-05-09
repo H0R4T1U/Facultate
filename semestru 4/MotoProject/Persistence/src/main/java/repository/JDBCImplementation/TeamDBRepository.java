@@ -4,9 +4,10 @@ package repository.JDBCImplementation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import repository.JdbcUtils;
-import repository.TeamRepository;
 
 import model.Team;
+import repository.TeamRepository;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

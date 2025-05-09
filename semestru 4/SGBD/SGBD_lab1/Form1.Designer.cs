@@ -8,6 +8,12 @@ namespace SGBD_lab1
         private DataGridView dataGridViewChild;
         private Button buttonAddChild;
         private Button buttonDelete;
+        private TextBox textBoxAmount;
+        private TextBox textBoxPaymentDate;
+        private TextBox textBoxType;
+        private Label labelAmount;
+        private Label labelPaymentDate;
+        private Label labelType;
 
         protected override void Dispose(bool disposing)
         {
@@ -22,6 +28,12 @@ namespace SGBD_lab1
             this.dataGridViewChild = new DataGridView();
             this.buttonAddChild = new Button();
             this.buttonDelete = new Button();
+            this.textBoxAmount = new TextBox();
+            this.textBoxPaymentDate = new TextBox();
+            this.textBoxType = new TextBox();
+            this.labelAmount = new Label();
+            this.labelPaymentDate = new Label();
+            this.labelType = new Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChild)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +67,7 @@ namespace SGBD_lab1
             // 
             // buttonAddChild
             // 
-            this.buttonAddChild.Location = new Point(12, 850);
+            this.buttonAddChild.Location = new Point(12, 1050);
             this.buttonAddChild.Name = "buttonAddChild";
             this.buttonAddChild.Size = new Size(150, 46);
             this.buttonAddChild.TabIndex = 2;
@@ -65,7 +77,7 @@ namespace SGBD_lab1
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new Point(180, 850);
+            this.buttonDelete.Location = new Point(180, 1050);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new Size(150, 46);
             this.buttonDelete.TabIndex = 3;
@@ -73,11 +85,65 @@ namespace SGBD_lab1
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new EventHandler(this.buttonDelete_Click);
             // 
+            // textBoxAmount
+            // 
+            this.textBoxAmount.Location = new Point(12, 900);
+            this.textBoxAmount.Name = "textBoxAmount";
+            this.textBoxAmount.Size = new Size(150, 39);
+            this.textBoxAmount.TabIndex = 4;
+            // 
+            // textBoxPaymentDate
+            // 
+            this.textBoxPaymentDate.Location = new Point(180, 900);
+            this.textBoxPaymentDate.Name = "textBoxPaymentDate";
+            this.textBoxPaymentDate.Size = new Size(150, 39);
+            this.textBoxPaymentDate.TabIndex = 5;
+            // 
+            // textBoxType
+            // 
+            this.textBoxType.Location = new Point(348, 900);
+            this.textBoxType.Name = "textBoxType";
+            this.textBoxType.Size = new Size(150, 39);
+            this.textBoxType.TabIndex = 6;
+            // 
+            // labelAmount
+            // 
+            this.labelAmount.AutoSize = true;
+            this.labelAmount.Location = new Point(12, 860);
+            this.labelAmount.Name = "labelAmount";
+            this.labelAmount.Size = new Size(91, 32);
+            this.labelAmount.TabIndex = 7;
+            this.labelAmount.Text = "Amount";
+            // 
+            // labelPaymentDate
+            // 
+            this.labelPaymentDate.AutoSize = true;
+            this.labelPaymentDate.Location = new Point(180, 860);
+            this.labelPaymentDate.Name = "labelPaymentDate";
+            this.labelPaymentDate.Size = new Size(156, 32);
+            this.labelPaymentDate.TabIndex = 8;
+            this.labelPaymentDate.Text = "Payment Date";
+            // 
+            // labelType
+            // 
+            this.labelType.AutoSize = true;
+            this.labelType.Location = new Point(348, 860);
+            this.labelType.Name = "labelType";
+            this.labelType.Size = new Size(63, 32);
+            this.labelType.TabIndex = 9;
+            this.labelType.Text = "Type";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new SizeF(13F, 32F);
             this.AutoScaleMode = AutoScaleMode.Font;
             this.ClientSize = new Size(1200, 1200);
+            this.Controls.Add(this.labelType);
+            this.Controls.Add(this.labelPaymentDate);
+            this.Controls.Add(this.labelAmount);
+            this.Controls.Add(this.textBoxType);
+            this.Controls.Add(this.textBoxPaymentDate);
+            this.Controls.Add(this.textBoxAmount);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonAddChild);
             this.Controls.Add(this.dataGridViewChild);
@@ -88,6 +154,7 @@ namespace SGBD_lab1
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChild)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
         }
     }
 }

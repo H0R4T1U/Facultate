@@ -44,6 +44,12 @@ public class JsonProtocolUtils {
         resp.setTeam(team);
         return resp;
     }
+    public static Response createPlayerAddedResponse(PlayerDTO dto) {
+        Response resp = new Response();
+        resp.setType(ResponseType.NEW_PLAYER);
+        resp.setNewPlayer(dto);
+        return resp;
+    }
     public static Request createLoginRequest(User user){
         Request req=new Request();
         req.setType(RequestType.LOGIN);
@@ -85,10 +91,5 @@ public class JsonProtocolUtils {
     }
 
 
-    public static Response createPlayerAddedResponse(PlayerDTO dto) {
-        Response resp = new Response();
-        resp.setType(ResponseType.NEW_PLAYER);
-        resp.setNewPlayer(dto);
-        return resp;
-    }
+
 }

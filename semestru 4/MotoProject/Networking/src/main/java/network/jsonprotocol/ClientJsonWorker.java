@@ -157,20 +157,25 @@ public class ClientJsonWorker implements Runnable, IObserver {
 
     private void sendResponse(Response response) throws IOException{
         String responseLine=gsonFormatter.toJson(response);
-        logger.debug("sending response "+responseLine);
         synchronized (output) {
             output.println(responseLine);
             output.flush();
         }
+        logger.debug("sending response "+responseLine);
+
     }
 
     @Override
     public void playerAdded(Player player) throws MotoException {
         Response response = JsonProtocolUtils.createPlayerAddedResponse(DTOUtils.getDTO(player));
+
         try{
+            Thread.sleep(1000);
             sendResponse(response);
         } catch (IOException e) {
             throw new MotoException("Error sending player added response: " + e.getMessage());
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 }

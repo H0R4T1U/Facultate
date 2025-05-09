@@ -5,4 +5,6 @@ include 'Service'
 include 'Networking'
 include 'Server'
 include 'Client'
+include 'Model'
+include 'Persistence'
 

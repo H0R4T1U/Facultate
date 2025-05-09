@@ -6,11 +6,13 @@ public class PlayerDTO implements Serializable {
     private String name;
     private String code;
     private String team;
+    private String id;
 
-    public PlayerDTO(String name, String code, String team) {
+    public PlayerDTO(String name, String code, String team,String id) {
         this.name = name;
         this.code = code;
         this.team = team;
+        this.id = id;
     }
 
     public String getName() {
@@ -37,12 +39,21 @@ public class PlayerDTO implements Serializable {
         this.team = team;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "PlayerDTO{" +
                 "name='" + name + '\'' +
                 ", code='" + code + '\'' +
                 ", team=" + team +
+                ", id=" + id +
                 '}';
     }
 }

@@ -8,7 +8,6 @@ import org.apache.logging.log4j.Logger;
 import repository.JdbcUtils;
 import repository.TextUtils;
 import repository.UserRepository;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.HashMap;

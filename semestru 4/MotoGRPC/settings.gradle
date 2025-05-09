@@ -1,0 +1,6 @@
+rootProject.name = 'MotoGRPC'
+include 'Server'
+include 'Model'
+include 'Persistence'
+include 'Service'
+

@@ -5,11 +5,10 @@ import model.Race;
 import model.Player;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import repository.JDBCImplementation.PlayerDBRepository;
+import repository.PlayerRepository;
 import repository.JdbcUtils;
 import repository.PlayerRepository;
 import repository.RaceRepository;
-
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

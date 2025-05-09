@@ -8,11 +8,11 @@ using log4net;
 using log4net.Config;
 using moto.services;
 
-namespace ChatClientGTK;
+namespace MotoClientGTK;
 
 internal class StartGTKClient
 {
-    private static int DEFAULT_PORT=55556;
+    private static int DEFAULT_PORT=9090;
     private static String DEFAULT_IP="127.0.0.1";
     private static readonly ILog log = LogManager.GetLogger(typeof(StartGTKClient));
     public static void Main(string[] args)
@@ -56,11 +56,10 @@ internal class StartGTKClient
         }
             
         log.InfoFormat("Using  server on IP {0} and port {1}", ip, port);
-       // IChatServices server = new ChatServerProxy(ip, port);
-        IService server = new ChatServerJsonProxy(ip, port);
+       // // IChatServices server = new ChatServerProxy(ip, port);
+        GrpcServiceClient server = new GrpcServiceClient(ip, port);
         GTKClientCtrl ctrl=new GTKClientCtrl(server);
-        Window w=new LoginWindow(ctrl);
-        // Window w = new ChatWindow();
+        Window w= new LoginWindow(ctrl); 
         w.ShowAll();
         Application.Run ();
                         

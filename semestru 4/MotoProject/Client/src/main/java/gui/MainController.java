@@ -139,7 +139,7 @@ public class MainController implements Initializable, IObserver {
             Optional<Team> team = server.getTeamByName(teamName);
             if(team.isPresent()) {
                 Player player = new Player(playerName, playerCode, team.get().getId());
-
+                player.setId(-1);
                 server.add(player,selectedRace.getId(),this);
             }
 

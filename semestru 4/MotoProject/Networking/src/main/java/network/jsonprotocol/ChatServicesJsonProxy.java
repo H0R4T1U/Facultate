@@ -22,6 +22,8 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Optional;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class ChatServicesJsonProxy implements IService {
@@ -138,23 +140,24 @@ public class ChatServicesJsonProxy implements IService {
 
     private void handleUpdate(Response response){
        if (response.getType()== ResponseType.NEW_PLAYER){
-
            Player player=DTOUtils.getFromDTO(response.getNewPlayer());
             logger.debug("Player added: "+player.getName());
-            try {
-                client.playerAdded(player);
-            } catch (MotoException e) {
-                logger.error(e);
-                logger.error(e.getStackTrace());
-            }
-        }
-
+           Executors.newSingleThreadExecutor().execute(() -> {
+               try {
+                   client.playerAdded(player);
+               } catch (MotoException e) {
+                   logger.error(e);
+                   logger.error(e.getStackTrace());
+               }
+           });
+       }
     }
 
     private boolean isUpdate(Response response){
         return response.getType() == ResponseType.NEW_PLAYER;
     }
     private class ReaderThread implements Runnable{
+        private final ExecutorService executor = Executors.newSingleThreadExecutor(); // Single executor for all updates
         public void run() {
             while(!finished){
                 try {
@@ -162,7 +165,9 @@ public class ChatServicesJsonProxy implements IService {
                     logger.debug("response received {}",responseLine);
                     Response response=gsonFormatter.fromJson(responseLine, Response.class);
                     if (isUpdate(response)){
-                        handleUpdate(response);
+                        ExecutorService executor = Executors.newFixedThreadPool(3);
+                        executor.execute(()->handleUpdate(response));
+                         executor.shutdown();
                     }else{
 
                         try {
@@ -190,6 +195,9 @@ public class ChatServicesJsonProxy implements IService {
                 String err = response.getErrorMessage();
                 closeConnection();
                 throw new MotoException(err);
+            }
+            if(response.getType()== ResponseType.OK){
+                logger.debug("OK:Player added: " +p.getName());
             }
         } catch (MotoException e) {
             logger.error(e);

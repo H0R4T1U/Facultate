@@ -3,7 +3,6 @@ class MyBGDRegression:
         self.intercept_ = 0.0
         self.coef_ = []
 
-    # batch gradient descent
     def fit(self, x, y, learningRate = 0.001, noEpochs = 1000, batches = 20):
         self.coef_ = [0.0 for _ in range(len(x[0]) + 1)]
         for _ in range(noEpochs):

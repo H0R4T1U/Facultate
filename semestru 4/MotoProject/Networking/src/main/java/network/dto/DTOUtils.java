@@ -40,7 +40,8 @@ public class DTOUtils {
         String name=player.getName();
         String code=player.getCode();
         String team = player.getTeam().toString();
-        return new PlayerDTO(name, code,team);
+        String id = player.getId().toString();
+        return new PlayerDTO(name, code,team,id);
     }
     public static PlayerDTO[] getDTO(Player[] players) {
         PlayerDTO[] pDTO=new PlayerDTO[players.length];
@@ -52,7 +53,10 @@ public class DTOUtils {
         String name=playerDTO.getName();
         String code=playerDTO.getCode();
         Integer team=Integer.parseInt(playerDTO.getTeam());
-        return new Player(name, code, team);
+        Integer id = Integer.parseInt(playerDTO.getId());
+        Player p = new Player(name, code, team);
+        p.setId(id);
+        return p;
     }
     public static Player[] getFromDTO(PlayerDTO[] players) {
         Player[] pDTO=new Player[players.length];

@@ -1,0 +1,64 @@
+<!--Un formular web va permite unui utilizator sa isi introduca numele, data nasterii, varsta si adresa de e-mail.
+    La apasarea unui buton “Trimite” se vor valida toate aceste campuri daca sunt completate si daca sunt completate corect.
+    Daca da, se va afisa un mesaj “Datele sunt completate corect”, altfel, se va afisa un mesaj de genul
+    “Campurile nume si varsta nu sunt completate corect”, aceste campuri fiind “incercuite” intr-o bordura rosie.
+    Toate aceste validari vor fi implementate pe client in JavaScript.
+    Nu se vor folosi biblioteci de functii, jQuery, pluginuri, etc.-->
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .invalid {
+            border: 10px solid red;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        input {
+            width: 800px;
+            height: 50px;
+            border-radius: 20px;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        label {
+            color: black;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        p {
+            color: black;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+    </style>
+    <script src="./index.js" defer></script>
+</head>
+<body>
+
+<form id="myForm">
+    <div class="container">
+        <label for="nume">Nume:</label><br>
+        <input type="text" id="nume"><br>
+        <label for="dataNasterii">Data nașterii:</label><br>
+        <input type="date" id="dataNasterii"><br>
+        <label for="varsta">Vârstă:</label><br>
+        <input type="number" id="varsta"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email"><br>
+        <br>
+        <input type="button" value="Trimite" onclick="validare()">
+        <p id="mesaj"></p>
+    </div>
+</form>
+
+
+</body>
+</html>

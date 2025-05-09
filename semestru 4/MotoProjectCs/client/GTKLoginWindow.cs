@@ -2,7 +2,7 @@ using chat.networking.jsonprotocol;
 using Gtk;
 using log4net;
 
-namespace ChatClientGTK;
+namespace MotoClientGTK;
 
 public class LoginWindow : Window
     {
@@ -56,7 +56,7 @@ public class LoginWindow : Window
             Application.Quit();
         }
         
-         void loginButtonPressed(object? sender, EventArgs e)
+         async void loginButtonPressed(object? sender, EventArgs e)
         {
             log.Debug("S-a apasat login");
             log.DebugFormat("Username {0} - Password - {1}",username.Text, password.Text);
@@ -64,7 +64,7 @@ public class LoginWindow : Window
             String pass = password.Text;
             try
             {
-                ctrl.login(user, pass);
+                await ctrl.login(user, pass);
                 log.Debug("Login succeded");
                 MotoWindow motoWin=new MotoWindow(ctrl, "Moto window for " + user);
                 motoWin.ShowAll();

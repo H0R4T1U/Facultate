@@ -19,6 +19,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import static java.lang.Thread.sleep;
+
 public class Service implements IService {
     private static final Logger log = LogManager.getLogger(Service.class);
     private Map<Integer, IObserver> loggedClients;
@@ -26,7 +28,7 @@ public class Service implements IService {
     private final UserRepository userRepository;
     private final RaceRepository raceRepository;
     private final TeamRepository teamRepository;
-    private final int defaultThreadsNo=3;
+    private final int defaultThreadsNo=2;
 
     public Service(PlayerRepository playerRepository, UserRepository userRepository, RaceRepository raceRepository, TeamRepository teamRepository) {
         this.playerRepository = playerRepository;
@@ -54,7 +56,7 @@ public class Service implements IService {
         log.info("User logged out: " + user.getUsername());
     }
 
-    public void add(Player player,Integer raceId,IObserver client) throws MotoException {
+    public synchronized void add(Player player,Integer raceId,IObserver client) throws MotoException {
         try {
             Optional<Race> race = raceRepository.findOne(raceId);
             player = playerRepository.save(player).get();
@@ -62,7 +64,13 @@ public class Service implements IService {
             race.get().setNoPlayers(race.get().getPlayers().size());
             raceRepository.update(race.get());
             log.info("Service:Player added");
-            notifyPlayerAdded(player);
+            for (IObserver c : loggedClients.values()) {
+                    try {
+                        c.playerAdded(player);
+                    } catch (MotoException e) {
+                        log.error("Error notifying player added " + e);
+                    }
+            }
         }catch (Exception e){
             throw new MotoException(e.getMessage());
         }
@@ -94,7 +102,7 @@ public class Service implements IService {
         return new Player[0];
     }
 
-private void notifyPlayerAdded(Player player) throws MotoException {
+private void notifyPlayerAdded(Player player) {
     ExecutorService executor = Executors.newFixedThreadPool(defaultThreadsNo);
     for (IObserver client : loggedClients.values()) {
         executor.execute(() -> {
