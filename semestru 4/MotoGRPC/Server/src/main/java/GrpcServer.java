@@ -2,6 +2,10 @@ import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import repository.HibernateImplementation.PlayerHibernateRepository;
+import repository.HibernateImplementation.RaceHibernateRepository;
+import repository.HibernateImplementation.TeamHibernateRepository;
+import repository.HibernateImplementation.UserHibernateRepository;
 import repository.JDBCImplementation.PlayerDBRepository;
 import repository.JDBCImplementation.RaceDBRepository;
 import repository.JDBCImplementation.TeamDBRepository;
@@ -27,10 +31,10 @@ public class GrpcServer {
                 logger.debug("Looking for file in "+(new File(".")).getAbsolutePath());
                 return;
             }
-            UserRepository userRepo=new UserDBRepository(serverProps);
-            PlayerRepository playerRepo=new PlayerDBRepository(serverProps);
-            TeamRepository teamRepo=new TeamDBRepository(serverProps);
-            RaceRepository raceRepo=new RaceDBRepository(serverProps,playerRepo);
+            UserRepository userRepo=new UserHibernateRepository();
+            PlayerRepository playerRepo=new PlayerHibernateRepository();
+            TeamRepository teamRepo=new TeamHibernateRepository();
+            RaceRepository raceRepo=new RaceHibernateRepository();
         Server server = ServerBuilder.forPort(9090)
                 .addService(new MotoServiceImpl(playerRepo,userRepo,raceRepo,teamRepo))
                 .build()

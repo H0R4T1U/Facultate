@@ -4,10 +4,44 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Race extends Entity<Integer> {
+import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+
+@Entity
+@Table(name = "Race")
+public class Race implements model.Entity<Integer> {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
+    private Integer id;
+    @Column(name = "EngineType")
     private Integer engineType;
+    @Column(name = "NoPlayers")
     private Integer noPlayers;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @JoinTable(
+            name = "PlayerRaces",
+            joinColumns = @JoinColumn(name = "RaceId"),
+            inverseJoinColumns = @JoinColumn(name = "PlayerId")
+    )
     private List<Player> players;
+
+    public Race() {
+        this.engineType =0;
+        this.noPlayers = 0;
+        this.players = new ArrayList<>();
+
+    }
+
+    @Override
+    public Integer getId() {
+        return this.id;
+    }
+
+    @Override
+    public void setId(Integer integer) {
+        this.id = integer;
+    }
 
     public Race(Integer engineType) {
         this.engineType = engineType;

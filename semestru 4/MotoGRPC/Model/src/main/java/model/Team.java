@@ -1,9 +1,36 @@
 package model;
 
 import java.util.Objects;
-
-public class Team extends Entity<Integer> {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Column;
+@Entity
+@Table(name = "Team")
+public class Team implements model.Entity<Integer> {
+    @Column(name = "Name")
     private String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
+    private Integer id;
+
+    public Team() {
+        name="";
+        id=0;
+    }
+
+    @Override
+    public Integer getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(Integer integer) {
+        this.id=integer;
+    }
 
     public Team(String name) {
         this.name = name;
@@ -11,6 +38,10 @@ public class Team extends Entity<Integer> {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override

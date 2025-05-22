@@ -1,0 +1,33 @@
+-- Transaction 1 (Session 1)
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+BEGIN TRAN;
+SELECT balance FROM Accounts WHERE account_id = 1;
+-- Wait here
+
+-- Transaction 2 (Session 2)
+UPDATE Accounts SET balance = balance + 500 WHERE account_id = 1;
+COMMIT;
+
+-- Transaction 1 (Session 1)
+SELECT balance FROM Accounts WHERE account_id = 1;
+-- Value has changed (non-repeatable read)
+COMMIT;
+
+-- Session A
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+BEGIN TRANSACTION;
+UPDATE Accounts SET balance = 200 WHERE account_id = 1;
+INSERT INTO LogEvents VALUES (GETDATE(), 'DirtyRead', 'A', 'Updated to 200, still uncommitted');
+-- aşteaptă impactul lui B ...
+
+-- Session B
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+DECLARE @v INT;
+SELECT @v = balance FROM Accounts WHERE account_id = 1;
+INSERT INTO LogEvents VALUES (GETDATE(), 'DirtyRead', 'B', 'Read Val=' + CAST(@v AS VARCHAR));
+-- => @v = 200
+
+-- Session A (după ce B a citit)
+ROLLBACK;
+INSERT INTO LogEvents VALUES (GETDATE(), 'DirtyRead', 'A', 'Rolled back');
+

@@ -1,0 +1,11 @@
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ
+BEGIN TRAN
+	print '1'
+	SELECT * FROM Accounts where account_type='TEST'
+	WAITFOR DELAY '00:00:10'
+	print '2'
+	SELECT * FROM Accounts where account_type='TEST'
+COMMIT TRAN;
+
+SELECT * FROM Accounts where account_type='TEST';
+--READ COMMITTED/REPEATABLE READ

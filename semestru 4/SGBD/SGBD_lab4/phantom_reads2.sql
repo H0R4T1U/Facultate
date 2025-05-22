@@ -1,0 +1,8 @@
+SET TRANSACTION ISOLATION LEVEL Serializiable
+BEGIN TRAN
+	SELECT * FROM Accounts WHERE account_type='TEST'
+	WAITFOR DELAY '00:00:07'
+	SELECT * FROM Accounts WHERE account_type='TEST'
+COMMIT TRAN
+--REPEATABLE READ/Serializiable
+-- 2

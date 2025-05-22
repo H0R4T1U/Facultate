@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group = 'testing'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation 'org.springframework:spring-web:6.1.12'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}

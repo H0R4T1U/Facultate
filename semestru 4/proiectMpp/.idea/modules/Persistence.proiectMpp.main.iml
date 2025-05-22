@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="proiectMpp:main" external.linked.project.path="$MODULE_DIR$/../../Persistence" external.root.project.path="$MODULE_DIR$/../../Persistence" external.system.id="GRADLE" external.system.module.group="proiectMpp" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_23">
+    <output url="file://$MODULE_DIR$/../../Persistence/build/classes/java/main" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../Persistence/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../Persistence/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Persistence/src/main/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: proiectMpp:Model:unspecified" level="project" />
+    <orderEntry type="module" module-name="Model.proiectMpp.main" />
+  </component>
+</module>

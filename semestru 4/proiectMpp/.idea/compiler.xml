@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="Client" target="23" />
+      <module name="Client.main" target="23" />
+      <module name="Client.test" target="23" />
+      <module name="Model" target="23" />
+      <module name="Model.main" target="23" />
+      <module name="Model.proiectMpp" target="23" />
+      <module name="Model.proiectMpp.main" target="23" />
+      <module name="Model.proiectMpp.test" target="23" />
+      <module name="Model.test" target="23" />
+      <module name="Network" target="23" />
+      <module name="Network.main" target="23" />
+      <module name="Network.test" target="23" />
+      <module name="Persistence" target="23" />
+      <module name="Persistence.main" target="23" />
+      <module name="Persistence.proiectMpp" target="23" />
+      <module name="Persistence.proiectMpp.main" target="23" />
+      <module name="Persistence.proiectMpp.test" target="23" />
+      <module name="Persistence.test" target="23" />
+      <module name="project.mpp.proiectMpp" target="23" />
+      <module name="project.mpp.proiectMpp.main" target="23" />
+      <module name="project.mpp.proiectMpp.test" target="23" />
+      <module name="Server" target="23" />
+      <module name="Server.main" target="23" />
+      <module name="Server.test" target="23" />
+      <module name="Service" target="23" />
+      <module name="Service.main" target="23" />
+      <module name="Service.test" target="23" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

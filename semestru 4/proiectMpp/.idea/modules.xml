@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Client.iml" filepath="$PROJECT_DIR$/Client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Client.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Client.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Client.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Client.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Model.proiectMpp.iml" filepath="$PROJECT_DIR$/.idea/modules/Model.proiectMpp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Model.proiectMpp.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Model.proiectMpp.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Model.proiectMpp.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Model.proiectMpp.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Network.iml" filepath="$PROJECT_DIR$/Network.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Network.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Network.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Network.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Network.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Persistence.proiectMpp.iml" filepath="$PROJECT_DIR$/.idea/modules/Persistence.proiectMpp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Persistence.proiectMpp.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Persistence.proiectMpp.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Persistence.proiectMpp.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Persistence.proiectMpp.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Server.iml" filepath="$PROJECT_DIR$/Server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Server.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Service.iml" filepath="$PROJECT_DIR$/Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Service.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proiectMpp.iml" filepath="$PROJECT_DIR$/proiectMpp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Model/proiectMpp.Model.iml" filepath="$PROJECT_DIR$/.idea/modules/Model/proiectMpp.Model.iml" />
+    </modules>
+  </component>
+</project>

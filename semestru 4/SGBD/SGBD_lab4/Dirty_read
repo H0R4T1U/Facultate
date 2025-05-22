@@ -1,0 +1,19 @@
+
+-- Session A
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+BEGIN TRANSACTION;
+UPDATE Accounts SET balance = 200 WHERE account_id = 1;
+INSERT INTO ActionLog VALUES (GETDATE(), 'DirtyRead', 'A', 'Updated to 200, still uncommitted');
+-- aşteaptă impactul lui B ...
+
+-- Session B
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+DECLARE @v INT;
+SELECT @v = balance FROM Accounts WHERE account_id = 1;
+INSERT INTO ActionLog VALUES (GETDATE(), 'DirtyRead', 'B', 'Read Val=' + CAST(@v AS VARCHAR));
+-- => @v = 200
+
+-- Session A (după ce B a citit)
+ROLLBACK;
+INSERT INTO ActionLog VALUES (GETDATE(), 'DirtyRead', 'A', 'Rolled back');
+
